@@ -2,7 +2,11 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Shop from "../views/Shop.vue";
+import Login from "../views/Login.vue";
 import detail from "../components/detail.vue";
+import signin from "../components/signin.vue";
+import showShop from "../components/showShop.vue";
+Vue.use(VueRouter);
 Vue.use(VueRouter);
 
 const routes = [
@@ -22,6 +26,21 @@ const routes = [
         component: detail,
       },
     ],
+  },
+  {
+    path: '/showShop',
+    name: 'showShop',
+    component: showShop,
+  },
+  {
+    path: '/Login',
+    name: 'Login',
+    component: Login,
+  },
+  {
+    path: '/signin',
+    name: 'signin',
+    component: signin,
   },
   {
     path: "/about",

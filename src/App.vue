@@ -1,41 +1,21 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn to="/" text>
-        <span class="mr-2">Home</span>
-      </v-btn>
-
-      <v-btn to="/about" text>
-        <span class="mr-2">About</span>
-      </v-btn>
-
-      <v-btn to="/Shop" text>
-        <span class="mr-2">SHOP</span>
-      </v-btn>
-    </v-app-bar>
-
+    <v-card id="lateral">
+      <v-toolbar dark tabs flat color="grey darken-4">
+        <v-app-bar-nav-icon></v-app-bar-nav-icon>
+        <v-toolbar-title>CAR SHOP</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <template v-slot:extension>
+          <v-tabs>
+            <v-chip class="ma-2" color="white" text-color="grey darken-4" to="/" text>Home</v-chip>
+            <v-chip class="ma-2" color="white" text-color="grey darken-4" to="/Shop" text>Shop</v-chip>
+            <v-chip class="ma-2" color="white" text-color="grey darken-4" to="/showShop" text>Store</v-chip>
+          </v-tabs>
+          <v-chip class="ma-2" color="white" text-color="grey darken-4" to="/Login" text>Login</v-chip>
+          <v-chip class="ma-2" color="white" text-color="grey darken-4" to="/signin" text>Sing in</v-chip>
+        </template>
+      </v-toolbar>
+    </v-card>
     <v-main>
       <router-view />
     </v-main>
@@ -47,7 +27,17 @@ export default {
   name: "App",
 
   data: () => ({
-    //
+    fab: false,
+    hidden: false,
+    tabs: null,
   }),
 };
 </script>
+<style>
+/* This is for documentation purposes and will not be needed in your application */
+#lateral .v-btn--example {
+  bottom: 0;
+  position: absolute;
+  margin: 0 0 16px 16px;
+}
+</style>

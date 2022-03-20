@@ -9,7 +9,6 @@
 export default {
   data() {
     return {  
-      
       Description: this.$route.params.description,
       price: this.$route.params.price,
       title: this.$route.params.title,
